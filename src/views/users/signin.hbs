@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="m-4 d-flex justify-content-center align-items-center" style="height: 910px;">
+        <div class="card">
+            <div class="card-header text-center" data-aos="slide-up" data-aos-duration="1000">
+                <h2>Inicio de sesion</h2>
+            </div>
+
+            <img src="/img/logo.png" class="rounded-circle mx-auto d-block m-4 logo">
+
+            <div class="card-body text-center">
+                <form action="/users/signin" method="POST">
+
+                    <div class="form-group" data-aos="slide-up" data-aos-duration="1000">
+                        <label for="ejemplo de email">Correo electrónico: </label>
+                        <input type="email" class="form-control text-center" name="email" placeholder="usuario@ejemplo.com" autofocus>
+                    </div>
+
+                    <div class="form-group" data-aos="slide-up" data-aos-duration="1000">
+                        <label for="Ejemplo de pass">Contraseña: </label>
+                        <input type="password" class="form-control text-center" name="contrasena" placeholder="Contraseña"> 
+                    </div><hr>
+
+                    <div class="text-center" data-aos="slide-up" data-aos-duration="1000">
+                        <button type="submit" class="btn btn-primary btn-lg"> Iniciar </button>
+                    </div>
+                </form><br>
+                <p class="text-center" data-aos="slide-up" data-aos-duration="1000">¿No tienes una cuenta?<a href="/users/signup"> Crear cuenta</a></p><hr>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>

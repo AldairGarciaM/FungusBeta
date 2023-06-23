@@ -1,0 +1,266 @@
+<div class="container">
+    <div class="m-4 d-flex justify-content-center align-items-center" style="height: 830px;">
+        <div class="card">
+            <div class="card-header text-center">
+                <div class="form-inline"><br>
+                    <input type="button" value="Página anterior" onclick="history.go(-1);">
+                </div>
+                <h1 class="text-center">Nuevo Registro</h1>
+            </div>
+
+            <div class="card-body">
+            <form action="/notes/newnotes" method="POST">
+
+                <div class="wrap">
+                    <ul class="tabs">
+			            <li><a href="#tab1"><span class="tabtext">Datos Generales</span></a></li>
+			            <li><a href="#tab2"><span class="tabtext">Características</span></a></li>
+			            <li><a href="#tab3"><span class="tabtext">Mas información</span></a></li>
+		            </ul>
+
+                    <div class="secciones">
+
+                        <article id="tab1" class="form-group">
+				            <h3 class="text-center">Datos Generales</h3><hr><br>
+
+				            <div class="form-group row">
+                                <div class="col-auto">
+                                    <label>Tipo de extracto</label>
+                                </div>
+                                <div class="col-auto">
+                                    <select name="tipo" class="form-control">
+                                        <option selected> --Seleccione un tipo de extracto--</option>
+                                        <option value="Hongo">Hongo</option>
+                                        <option value="Vegetal">Vegetal</option>
+                                    </select>
+                                </div>
+                            </div>
+            
+                            <div class="form-group row">
+                                <div class="col-auto">
+                                    <label class="col-form-label">Código:</label>
+                                </div>
+                                <div class="col-auto">
+                                    <select name="cod" class="form-control">
+                                        <option selected>--Tipo de acronimo--</option>
+                                        <option value="EV-">EV-</option>
+                                        <option value="EH-">EH-</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <input type="text" name="title" class="form-control" placeholder="Ejem: 01-2021" autocomplete="off">
+                                </div>  
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-auto">
+                                    <label class="col-form-label">Nombre del extracto:</label>
+                                </div>
+                                <div class="col">
+                                    <input type="text" name="description" class="form-control" autocomplete="off"></input> 
+                                </div> 
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-auto">
+                                    <label>Materia Prima:</label>
+                                </div>
+                                <div class="col">
+                                    <input type="text" name="materia" class="form-control" autocomplete="off"></input>
+                                </div>  
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-auto">
+                                    <label>Familia:</label>
+                                </div>
+                                <div class="col">
+                                    <input type="text" name="familia" class="form-control" autocomplete="off"></input>
+                                </div>  
+                            </div>
+
+                            <div class="form-group">
+                                <label>Descripción:</label>
+                                <textarea name="des" class="form-control"></textarea>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-auto">
+                                    <label>Orígen:</label>
+                                </div>
+                                <div class="col">
+                                    <input type="text" name="origen" class="form-control" autocomplete="off"></input>
+                                </div>  
+                            </div>
+
+                            <div class="form-group">
+                                <label>Propiedades Funcionales:</label>
+                                <textarea name="propiedades" class="form-control"></textarea>  
+                            </div>
+
+                            <div class="form-group">
+                                <label>Fórmula:</label>
+                                <textarea name="formula" class="form-control"></textarea>
+                            </div>
+			            </article>
+
+
+
+
+                        <article id="tab2">
+				            <h3 class="text-center">Características</h3><hr><br>
+
+				            <div class="form-group row">
+                                <div class="col-auto">
+                                    <label>Color:</label>
+                                </div>
+                                <div class="col text-center">
+                                    <span>Hexadecimal:</span>
+                                    <input type="text" name="color" class="form-control text-center" placeholder="#F0F8FF" autocomplete="off"></input>
+                                </div>
+                                <div class="col text-center">
+                                    <span>RGB:</span>
+                                    <input type="text" name="rgb" class="form-control text-center" placeholder="(255,145,75)" autocomplete="off"></input>
+                                </div>  
+                            </div>
+
+				            <div class="form-group row">
+                                <div class="col-auto">
+                                    <label>Densidad:</label>
+                                </div>
+                                <div class="col">
+                                    <input type="text" name="densidad" class="form-control" autocomplete="off"></input>
+                                </div>
+                                <div class="col">
+                                    <select name="unidad" class="form-control">
+                                        <option selected>--Seleccione la unidad--</option>
+                                        <option value="gr/ml">gr/ml</option>
+                                        <option value="gr/cm3">gm/cm3</option>
+                                    </select>
+                                </div>
+                            </div>
+
+				            <div class="form-group row">
+                                <div class="col-auto">
+                                    <label>Índice de refracción:</label>
+                                </div>
+                                <div class="col">
+                                    <input type="text" name="refraccion" class="form-control" autocomplete="off" id="refra"></input>
+                                </div>
+                                <div class="col">
+                                    <span class="input-group-text">°brix</span>
+                                </div>
+                            </div>
+
+				            <div class="form-group row">
+                                <div class="col-auto">
+                                    <label>Sólidos:</label>
+                                </div>
+                                <div class="col">
+                                    <input type="text" name="solido" class="form-control"></input>
+                                </div> 
+                                <div class="col">
+                                    <span class="input-group-text">%</span>
+                                </div>
+                            </div>
+
+				            <div class="form-group row">
+                                <div class="col-auto">
+                                    <label>PH:</label>
+                                </div>
+                                <div class="col">
+                                    <input type="text" name="ph" class="form-control" autocomplete="off"></input>
+                                </div>  
+                            </div>
+
+				            <div class="form-group row">
+                                <div class="col-auto">
+                                    <label>Perfil lipíco:</label>
+                                </div>
+                                <div class="col">
+                                    <input type="text" name="lipico" class="form-control"></input>
+                                </div>
+                                <div class="col">
+                                    <span class="input-group-text">ppm</span>
+                                </div>
+                            </div>
+			            </article>
+
+
+
+
+                        <article id="tab3">
+				            <h3 class="text-center">Otros datos</h3><hr>
+
+                            <h3>Modo de uso</h3>
+				            <div class="form-group">
+                                <div>
+                                    <select name="modo" class="form-control">
+                                        <option selected>--Seleccione un uso--</option>
+                                        <option value="interno">Interno</option>
+                                        <option value="externo">Externo</option>
+                                    </select>
+                                </div>
+                            </div>
+
+				            <h3>Precauciones</h3>
+				                <div class="form-group">
+                                    <label>Contradiciones y precauciones:</label>
+                                    <textarea name="precauciones" class="form-control"></textarea> 
+                                </div>
+
+				            <h3>Conclusiones</h3>
+				                <div class="form-group">
+                                    <label>Recomendaciones y conclusiones:</label>
+                                    <textarea name="conclusiones" class="form-control"></textarea>
+                                </div>
+
+				                <div class="text-center">
+                                    <button class="btn btn-primary btn-lg" type="submit"> Guardar </button>
+                                </div>
+			            </article>
+                    </div>
+                </div>
+
+                <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js' type='text/javascript'></script>
+
+                <script type="text/javascript">
+                    $(document).ready(function(){
+                    $('ul.tabs li a:first').addClass('active');
+                    $('.secciones article').hide();
+                    $('.secciones article:first').show();
+
+                    $('ul.tabs li a').click(function() {
+                        $('ul.tabs li a').removeClass('active');
+                        $(this).addClass('active');
+                        $('.secciones article').hide();
+
+                        var activeTab = $(this).attr('href');
+                        $(activeTab).show();
+                        return false;
+                        });
+                    });
+                </script>
+
+                <script type="text/javascript">
+                   $(document).ready(function(){
+                       $('button.panel a').click(function(){
+                            $('.secciones article').hide();
+
+                            var push = $(this).attr('href');
+                            $(push).show();
+                            return false;
+                       });
+                   });
+                </script>
+
+                <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+                <script>
+                    AOS.init();
+                </script>
+
+            </form>
+        </div>
+        </div>
+    </div>
+</div>

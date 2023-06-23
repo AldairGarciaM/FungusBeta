@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+      <a class="navbar-brand" href="/">
+        <img class="rounded-circle" src="/img/logo.png" width="50px" height="50px"> 
+        Fungus
+      </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+        {{#if user}}
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Menu
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/notes">Mis registros</a>
+                    <a class="dropdown-item" href="/notes/add">Crear nuevo registro</a>
+                <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/users/log">Cerrar sesión</a>
+                </div>
+            </li>
+        {{else}}
+        <li class="nav-item active">
+            <a class="nav-link" href="/users/signin">Iniciar sesion</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="/users/signup">Crear cuenta</a>
+        </li>
+        {{/if}}
+    </ul>
+  </div>
+  </div>
+</nav><br>
+

@@ -1,0 +1,82 @@
+<br><div data-aos="slide-right" data-aos-duration="1000">
+    <nav class="navbar navbar-dark bg-light text-center">
+        <div class="container fluid">
+            <div class="form-inline" data-aos="slide-right" data-aos-duration="1000">
+                <input type="button" value="Página anterior" onclick="history.go(-1);">
+            </div>
+            <div class="form-inline text-center">
+                <h2>Mis registros</h2>
+            </div>
+            <!--form class="form-inline" action="/notes/{{tipo}}">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Hongo</button>
+            </form-->
+        </div>
+    </nav><br>
+</div>
+
+<div>
+    {{#each notes}}
+        <div class="card text-center col-sm-8 mx-auto" data-aos="flip-right" data-aos-duration="1000">
+            <div class="card-header">
+
+                <!--Menu para editar y eliminar-->
+                <li class="nav-item dropdown d-flex flex-row-reverse">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Submenu</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                    <a class="dropdown-item text-center"> Opciones </a> 
+                    <div class="dropdown-divider"></div>  
+
+                    <!--Accion para direccionar a editar-->
+                    <a class="dropdown-item text-center btn-block">
+                        <form action="/notes/edit/{{_id}}">
+                            <button class="btn btn-success btn-sm">Editar</button>
+                        </form>
+                    </a>
+
+                    <div class="dropdown-divider"></div>
+
+                    <!--Accion para eliminar-->
+                    <a class="dropdown-item text-center btn-block">
+                        <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
+                            <input type="hidden" name="method" value="DELETE">
+                            <button class="btn btn-danger btn-sm" type="submit"> Eliminar </button>
+                        </form>
+                    </a>
+                    </div>
+                </li>
+                
+                <!--Titulo de la tarjeta-->
+                <h4 class="card-title"> Tipo de extracto: {{tipo}} </h4>
+            </div>
+
+            <!--Cuerpo de la tarjeta-->
+            <div class="card-body">
+                <h5 class="card-text"> Código: {{cod}} {{title}} </h5>
+                <h5 class="card-text"> Nombre: {{description}}</h5>
+
+                <a href="/notes/view/{{_id}}" class="btn btn-primary">Ver mas</a>
+            </div>
+            <div class="card-footer text-muted">
+                <h5 class="card-text"> Fecha de creación: {{ date }} </h5>
+            </div>
+
+        </div><br>
+
+    <!--Si no existe algun dato guardado se mostrara esta tarjeta para crear-->
+    {{else}}
+        <div class="card text-center mx-auto" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Hola!!!!!</h5>
+                <p class="card-text">Al parecer aun no tienes ningun registro.</p>
+                <a href="/notes/add" class="btn btn-success btn-block">Crear nuevo</a>
+            </div>
+        </div>
+    {{/each}}
+
+    <!--Script para la animacion de AOS utilizada-->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+</div>

@@ -1,0 +1,13 @@
+Entra al cmd o desde la terminal del editor de codigo.
+
+Escribir la ruta donde se encuentra el proyecto
+
+Ejemplo:
+
+C:\Users\HP\Desktop\Proyecto>
+
+Escribir el comando:
+
+npm install
+
+y se instalaran las dependencias utilizadas en el proyecto.
